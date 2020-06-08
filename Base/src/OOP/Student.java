@@ -2,7 +2,7 @@ package Base.src.OOP;
 
 public class Student {
     private String name;
-    private Integer gender;// 1 male,0 female
+    private Integer age;// 1 male,0 female
 
     public Student() {
     }
@@ -11,9 +11,23 @@ public class Student {
         this.name = name;
     }
 
-    public Student(String name, Integer gender) {
+    public Student(String name, Integer age) {
         this.name = name;
-        this.gender = gender;
+        this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Student s = (Student) obj;
+        if (this.name == s.name) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + "--" + this.age;
     }
 
     public String getName() {
@@ -24,11 +38,12 @@ public class Student {
         this.name = name;
     }
 
-    public Integer getGender() {
-        return gender;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
+    public void setAge(Integer age) {
+        this.age = age;
     }
+
 }
